@@ -3,6 +3,9 @@ exports.handler = async (event) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ ResultCode: 0, ResultDesc: "Accepted" })
+    body: JSON.stringify({
+      ResultCode: 0,
+      ResultDesc: "Accepted"
+    })
   };
 };
