@@ -22,3 +22,13 @@
     "axios": "^1.13.2"
   }
 }
+{
+  "name": "mission-countdown",
+  "version": "1.0.0",
+  "dependencies": {
+    "node-fetch": "2.6.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
