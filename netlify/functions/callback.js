@@ -105,5 +105,33 @@ exports.handler = async function(event, context) {
                 ResultDesc: 'Success'
             })
         };
+  
+    
     }
+
+    // Add this function to your callback.js, and call it when payment is successful
+async function saveToGoogleSheets(donationData) {
+    const webAppUrl =// In your callback.js function
+const webAppUrl = 'https://script.google.com/macros/s/AKfycbyk0El0jehxu0EpLek_bIwtVmV-4zyTqe9YXXJfbYxKKAnDMa-mYPzT4WB83Qh1V86C/exec';
+    
+    try {
+        const response = await fetch(webAppUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(donationData)
+        });
+        
+        const result = await response.json();
+        console.log('Google Sheets save result:', result);
+        return result.success;
+    } catch (error) {
+        console.error('Failed to save to Google Sheets:', error);
+        return false;
+    }
+}
+
+// Then in your successful payment section, add:
+// const saved = await saveToGoogleSheets(donationRecord);
+// console.log('Saved to sheets:', saved);
 };
+
