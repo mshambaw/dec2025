@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philadelphia Remedies | God's Healing Way</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== NATURE-THEMED COLORS ===== */
+        :root {
+            --primary: #2e7d32;      /* Forest green - healing */
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #8d6e63;    /* Earth brown */
+            --accent: #ff9800;       /* Warm orange */
+            --light: #f1f8e9;        /* Light green background */
+            --dark: #1b5e20;         /* Deep green text */
+            --text: #5d4037;         /* Brown text */
+            --gray: #757575;
+            --gray-light: #e8f5e9;
+            --danger: #d32f2f;
+            --success: #388e3c;
+            --warning: #f57c00;
+            --shadow: 0 8px 25px rgba(30, 60, 30, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --nature-gradient: linear-gradient(135deg, #2e7d32 0%, #8d6e63 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #c8e6c9 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+/* ===== HERO SECTION ===== */
+.hero {
+    position: relative;
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    /* For gray overlay: */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(50, 50, 50, 0.5)); */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.feature-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+}
+
+.feature-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+        min-height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .hero-features {
+        gap: 25px;
+    }
+   /* Semi-transparent Black (Subtle Gray) */
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+}
+/* ===== LOGO STYLES ===== */
+.logo-icon {
+    background: var(--nature-gradient);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* This ensures the image stays within the circle */
+}
+
+.logo-image {
+    width: 80%; /* Adjust this to fit your logo */
+    height: 80%;
+    object-fit: contain; /* This keeps your logo's aspect ratio */
+    border-radius: 0; /* Remove if you want rectangular logo */
+}
+
+/* Alternative: Remove background if your logo already has one */
+.logo-icon.no-bg {
+    background: none;
+}
+
+/* For rectangular logos that need to fill the circle */
+.logo-image.fill {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        /* ===== HEADER & NAVIGATION ===== */
+        .header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(30, 60, 30, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--nature-gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .logo-tagline {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background: var(--gray-light);
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-cta {
+            background: var(--nature-gradient);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.3);
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.3rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--danger);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(30, 60, 30, 0.85), rgba(30, 60, 30, 0.85)), 
+                        url('https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* ===== PRODUCTS SECTION ===== */
+        .products-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--nature-gradient);
+            border-radius: 2px;
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: var(--gray-light);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(30, 60, 30, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid var(--gray-light);
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-tag {
+            background: var(--gray-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            color: var(--gray);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .add-to-cart {
+            background: var(--nature-gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .mission-points {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .mission-points li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .mission-points i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* ===== CART MODAL ===== */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .cart-modal.open {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .cart-items {
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--gray-light);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .cart-item-remove {
+            color: var(--danger);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--primary-dark);
+        }
+
+        .cart-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cart-action-btn {
+            padding: 15px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkout-btn {
+            background: var(--nature-gradient);
+            color: white;
+            border: none;
+        }
+
+        .continue-shopping {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--nature-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* ===== CONTACT & ORDER ===== */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--nature-gradient);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* ===== PRODUCT DETAILS MODAL ===== */
+        .product-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1002;
+            padding: 20px;
+        }
+
+        .product-modal.open {
+            display: flex;
+        }
+
+        .product-modal-content {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: var(--radius);
+            padding: 40px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .product-modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-modal-body {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header --><!-- Header -->
+<header class="header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <img src="logo.png" alt="Philadelphia Remedies Logo" class="logo-image fill">
+            </div>
+            <div>
+                <div class="logo-text">Philadelphia Remedies</div>
+                <div class="logo-tagline">God's Remedies Cleanse The System.</div>
+            </div>
+        </a>
+            <div>
+                <div class="logo-text">Within Maseno?</div>
+                <div class="logo-tagline">Check our Shop... </div>
+            </div>
+        
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#products" class="nav-link">Remedies in Store</a>
+                <a href="#about" class="nav-link">Our Mission</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-cta">Support Mission</a>
+                <div class="cart-icon" id="cartToggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-background">
+        <img src="rowrems.jpg" alt="Natural Remedies" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+        <h1 class="hero-title">God's Healing Way</h1>
+        <p class="hero-subtitle">Natural Remedies. Pure air, sunlight, abstemiousness, rest, exercise, proper diet, the use of water, trust in divine power—these are the true remedies. MH 127</p>
+        
+        <div class="hero-features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <span>100% Organic</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <span>Mission Supported</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <span>Free Delivery within Maseno</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <span>Quality Assured</span>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Store</h2>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="spices">Spices</button>
+                   <button class="filter-btn" data-category="Sweeteners and Foods">Sweeteners and Foods</button>
+                <button class="filter-btn" style="display:none">Other Stores</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <img src="mitaboni.jpg" alt="Mission Work" class="about-image">
+                <div class="about-text">
+                    <h3>Medical Missionary Work</h3>
+                    <p>Medical missionary work—Christlike ministry for the suffering—this is the work that will remove the mist of ignorance and superstition which for so long has hung over the Southern field. Ms 86, 1901. </p>
+                    
+                    <ul class="mission-points">
+                        <li><i class="fas fa-check-circle"></i> All products ethically wildcrafted or organic farmed</li>
+                        <li><i class="fas fa-check-circle"></i> 100% of profits support medical missionary work</li>
+                        <li><i class="fas fa-check-circle"></i>Only God's Healing Way</li>
+                        <li><i class="fas fa-check-circle"></i> Sustainable packaging and practices</li>
+                    </ul>
+                    
+                    <p>Our team has men trained from our trusted institutions on how better to do the treatments to the glory of God. Our Approach is Holistic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Healing Stories</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The immune support tincture helped me recover from a persistent cough when modern medicine failed. I'm now a believer in natural healing!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <h4>Shosho</h4>
+                            <span>Makuchi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Knowing my purchase supports medical missions gives me double joy. The pain relief salve works wonders for my arthritis."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JK</div>
+                        <div>
+                            <h4>James K.</h4>
+                            <span>Makuchi, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Your remedies and methods have been effective in helping me overcome addiction from narcotics. I really see great improvements."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LN</div>
+                        <div>
+                            <h4>Festus Musembi.</h4>
+                            <span>Makuchi , Kenya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Form -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Order & Consultation</h2>
+            
+            <div class="contact-form">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="07XX XXX XXX" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Delivery Address *</label>
+                        <textarea id="address" class="form-control" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderNotes">Order Notes / Health Concerns</label>
+                        <textarea id="orderNotes" class="form-control" rows="4" placeholder="List the products you want to order or describe your health concerns for personalized recommendations..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Order Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-modal" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will appear here -->
+        </div>
+        
+        <div class="cart-total">
+            Total: KES <span id="cartTotal">0</span>
+        </div>
+        
+        <div class="cart-actions">
+            <button class="cart-action-btn checkout-btn" id="checkoutBtn">
+                <i class="fas fa-lock"></i> Proceed to Checkout
+            </button>
+            <button class="cart-action-btn continue-shopping" id="continueShopping">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="close-modal" id="closeProductModal">&times;</button>
+            <div class="product-modal-body" id="productModalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Data - ONLY 3 SPICES
+        const products = [
+            {
+                id: 1,
+                name: "Cayenne",
+                category: "spices",
+                price: 300,
+                originalPrice: 450,
+                image: "cayyene.jpg",
+                description: "Pure Cayenne powder with powerful anti-inflammatory properties. Sourced from organic farms.",
+                benefits: ["Anti-inflammatory", "Joint Health", "Ulcers", "nerve support, circulation"],
+                usage: "1 tablespoon in the morning with water on empty stomach",
+                ingredients: "100% Pure Cayenne Powder",
+                stock: 1
+            },
+            {
+                id: 2,
+                name: "Cloves Powder",
+                category: "spices",
+                price: 300,
+                originalPrice: 450,
+                image: "cloves.jpg",
+                description: "Take one teaspoon of cloves powder with warm water to relieve toothache and improve digestion.",
+                benefits: ["Dental Pain Relief", "Digestive Aid", "Antimicrobial", "Antioxidant"],
+                usage: "1 teaspoon with warm water before meals",
+                ingredients: "Pure Cloves Powder",
+                stock: 1
+            },
+            {
+                id: 3,
+                name: "Pure Natural Honey",
+                category: "Sweeteners and Foods",
+                price: 500,
+                originalPrice: 700,
+                image: "honey.jpg",
+                description: "Pure natural honey. Can be blended in cough syrup or home baking use.",
+                benefits: ["Cough Relief", "Energy Boost", "Ulcer Healing", "Antibacterial"],
+                usage: "With or without meals, 1-2 teaspoons daily",
+                ingredients: "Pure Raw Honey",
+                stock: 3
+            }
+        ];
+
+        // Cart State
+        let cart = [];
+        let currentCategory = 'all';
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            setupEventListeners();
+            loadCartFromStorage();
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Render products
+        function renderProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            const filteredProducts = currentCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === currentCategory);
+
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card" data-id="${product.id}">
+                    ${product.originalPrice > product.price ? 
+                        `<div class="product-badge">Save KES ${product.originalPrice - product.price}</div>` : ''}
+                    
+                    <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://via.placeholder.com/400x300/4CAF50/ffffff?text=Product+Image'">
+                    
+                    <div class="product-content">
+                        <div class="product-category">${getCategoryName(product.category)}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        
+                        <div class="product-benefits">
+                            ${product.benefits.map(benefit => 
+                                `<span class="benefit-tag">${benefit}</span>`
+                            ).join('')}
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div class="product-price">
+                                KES ${product.price.toLocaleString()}
+                                ${product.originalPrice > product.price ? 
+                                    `<span>KES ${product.originalPrice.toLocaleString()}</span>` : ''}
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 15px; color: var(--gray); font-size: 0.9rem;">
+                            <i class="fas fa-box"></i> ${product.stock} in stock
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click event to view product details
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('add-to-cart')) {
+                        const productId = parseInt(this.getAttribute('data-id'));
+                        showProductDetails(productId);
+                    }
+                });
+            });
+        }
+
+        // Category names
+        function getCategoryName(category) {
+            const names = {
+                'spices': 'Premium Spice',
+                'all': 'All Spices'
+            };
+            return names[category] || category;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.getAttribute('data-category');
+                    renderProducts();
+                });
+            });
+
+            // Cart toggle
+            document.getElementById('cartToggle').addEventListener('click', toggleCart);
+            document.getElementById('closeCart').addEventListener('click', toggleCart);
+            document.getElementById('continueShopping').addEventListener('click', toggleCart);
+
+            // Order form
+            document.getElementById('orderForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                
+                if (cartCount === 0) {
+                    alert('Please add items to your cart before ordering.');
+                    return;
+                }
+
+                const phone = document.getElementById('phone').value;
+                const name = document.getElementById('name').value;
+                const address = document.getElementById('address').value;
+                
+                // Format cart items for message
+                let itemsText = '';
+                let total = 0;
+                cart.forEach(item => {
+                    const product = products.find(p => p.id === item.productId);
+                    itemsText += `• ${product.name} (${item.quantity} x KES ${product.price}) = KES ${product.price * item.quantity}\n`;
+                    total += product.price * item.quantity;
+                });
+                
+                // Create WhatsApp message
+                const message = `🌿 NEW ORDER - Philadelphia Remedies\n\n` +
+                               `Name: ${name}\n` +
+                               `Phone: ${phone}\n` +
+                               `Address: ${address}\n\n` +
+                               `Order Items:\n${itemsText}\n` +
+                               `Total: KES ${total.toLocaleString()}\n\n` +
+                               `Order Notes:\n${document.getElementById('orderNotes').value || 'None'}`;
+                
+                // Encode for WhatsApp
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/254759172878?text=${encodedMessage}`;
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Show confirmation
+                alert(`Order submitted! You'll be redirected to WhatsApp to confirm your order.`);
+                
+                // Clear cart
+                cart = [];
+                saveCartToStorage();
+                updateCartUI();
+                this.reset();
+                
+                // Close cart if open
+                document.getElementById('cartModal').classList.remove('open');
+            });
+
+            // Checkout button
+            document.getElementById('checkoutBtn').addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty. Add items to proceed.');
+                    return;
+                }
+                
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('cartModal').classList.remove('open');
+            });
+
+            // Close product modal
+            document.getElementById('closeProductModal').addEventListener('click', function() {
+                document.getElementById('productModal').classList.remove('open');
+            });
+        }
+
+        // Cart functions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.productId === productId);
+            
+            if (existingItem) {
+                if (existingItem.quantity < product.stock) {
+                    existingItem.quantity++;
+                } else {
+                    alert(`Only ${product.stock} units of "${product.name}" available.`);
+                    return;
+                }
+            } else {
+                cart.push({
+                    productId: productId,
+                    quantity: 1
+                });
+            }
+            
+            saveCartToStorage();
+            updateCartUI();
+            
+            // Show confirmation
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.productId !== productId);
+            saveCartToStorage();
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            // Update cart items
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: var(--gray);">Your cart is empty</p>';
+                cartTotal.textContent = '0';
+                return;
+            }
+            
+            let total = 0;
+            cartItems.innerHTML = cart.map(item => {
+                const product = products.find(p => p.id === item.productId);
+                const itemTotal = product.price * item.quantity;
+                total += itemTotal;
+                
+                return `
+                    <div class="cart-item">
+                        <img src="${product.image}" alt="${product.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/60x60/4CAF50/ffffff?text=Product'">
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${product.name}</div>
+                            <div class="cart-item-price">KES ${product.price.toLocaleString()} x ${item.quantity}</div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${product.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+            
+            cartTotal.textContent = total.toLocaleString();
+        }
+
+        // Storage functions
+        function saveCartToStorage() {
+            localStorage.setItem('missionRemediesCart', JSON.stringify(cart));
+        }
+
+        function loadCartFromStorage() {
+            const savedCart = localStorage.getItem('missionRemediesCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartUI();
+            }
+        }
+
+        // Modal functions
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+        }
+
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const modalBody = document.getElementById('productModalBody');
+            modalBody.innerHTML = `
+                <div>
+                    <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: var(--radius);" onerror="this.src='https://via.placeholder.com/400x300/4CAF50/ffffff?text=Product+Image'">
+                    <div style="margin-top: 20px;">
+                        <button class="add-to-cart" style="width: 100%;" onclick="addToCart(${product.id}); document.getElementById('productModal').classList.remove('open');">
+                            <i class="fas fa-cart-plus"></i> Add to Cart - KES ${product.price.toLocaleString()}
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 10px;">${product.name}</h3>
+                    <div class="product-category">${getCategoryName(product.category)}</div>
+                    
+                    <p style="margin: 20px 0;">${product.description}</p>
+                    
+                    <div style="background: var(--gray-light); padding: 15px; border-radius: var(--radius); margin: 20px 0;">
+                        <h4><i class="fas fa-heart" style="color: var(--primary);"></i> Benefits</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                            ${product.benefits.map(benefit => 
+                                `<span class="benefit-tag">${benefit}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4><i class="fas fa-book" style="color: var(--primary);"></i> How to Use</h4>
+                        <p>${product.usage}</p>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <h4><i class="fas fa-leaf" style="color: var(--primary);"></i> Ingredients</h4>
+                        <p>${product.ingredients}</p>
+                    </div>
+                    
+                    <div style="color: var(--success); font-weight: 600;">
+                        <i class="fas fa-box"></i> ${product.stock} units available
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('productModal').classList.add('open');
+        }
+
+        // Notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--success);
+                color: white;
+                padding: 15px 25px;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                z-index: 1003;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+

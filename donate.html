@@ -13,9 +13,19 @@
         .form-control:invalid {
             border-color: #e74c3c !important;
         }
+<<<<<<< HEAD
         
         .form-control:valid {
             border-color: #2ecc71 !important;
+=======
+
+        /* ===== CONTAINER ===== */
+        .container {
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 0 20px;
+>>>>>>> 5b97db5f12f0c617174e4b8893816c907bf40e73
         }
         
         .error-message {
@@ -135,6 +145,7 @@ cat > donate-new.html << 'EOF'
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <!-- [KEEP YOUR EXISTING HTML STRUCTURE] -->
     <!-- Make sure your form inputs have these attributes: -->
     
@@ -157,10 +168,441 @@ cat > donate-new.html << 'EOF'
     
     <!-- [REST OF YOUR HTML] -->
     
+=======
+    <div class="container">
+        <!-- Header with Your Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">
+   
+</div>
+                <img src="logo.png" 
+                     alt="Mission Countdown Logo" 
+                     class="logo-image fill"
+                     onerror="this.onerror=null; this.src='https://philadelphiaministry.netlify.app/favicon.ico'; this.style.height='80px';">
+            </div>
+            <h1 class="mission-title">Mission Countdown</h1>
+            <p class="mission-subtitle">
+                Every donation counts in our race against time. Join us in making a lasting impact and creating positive change in our community.
+            </p>
+        </header>
+
+        <!-- Progress Bar Section -->
+        <div class="progress-container">
+            <div class="progress-text">
+                <span class="raised-amount">KES <span id="raisedAmount">0</span></span>
+                <span class="goal-amount">of <span id="goalAmount">100,000</span> goal</span>
+                <span class="progress-percentage" id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="donor-count">
+                <i class="fas fa-users"></i>
+                <span><span id="donorCount">0</span> generous supporters and counting...</span>
+            </div>
+        </div>
+
+        <!-- Donation Card -->
+        <main class="donation-card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div>
+                    <h2 class="card-title">Support Our Mission</h2>
+                    <p class="card-subtitle">Secure donation via M-Pesa - Fast & Convenient</p>
+                </div>
+            </div>
+
+            <!-- Donation Form -->
+            <form id="donationForm">
+                <!-- Phone Input -->
+                <div class="form-group">
+                    <label class="form-label" for="phone">
+                        <i class="fas fa-mobile-alt"></i> M-Pesa Phone Number
+                    </label>
+                    <div class="input-with-icon">
+                        <i class="input-icon fas fa-phone"></i>
+                       <input type="tel" 
+       id="phone" 
+       class="form-control" 
+       placeholder="0741 351 755"
+       pattern="[0-9\s]{10,15}"
+       title="Enter Kenyan phone number (07xx xxx xxx or 2547xx xxx xxx)"
+       required>
+                    </div>
+                    <small style="color: var(--gray); margin-top: 8px; display: block; font-size: 0.9rem;">
+                        <i class="fas fa-info-circle"></i> Use your Safaricom number that's registered with M-Pesa
+                    </small>
+                </div>
+
+                <!-- Amount Input -->
+                <div class="form-group">
+                    <label class="form-label" for="amount">
+                        <i class="fas fa-donate"></i> Donation Amount (KES)
+                    </label>
+                    
+                    <!-- Quick Amount Buttons -->
+                    <div class="amount-presets">
+                        <button type="button" class="amount-btn" data-amount="100">100</button>
+                        <button type="button" class="amount-btn" data-amount="500">500</button>
+                        <button type="button" class="amount-btn" data-amount="1000">1,000</button>
+                        <button type="button" class="amount-btn" data-amount="2000">2,000</button>
+                        <button type="button" class="amount-btn" data-amount="5000">5,000</button>
+                        <button type="button" class="amount-btn" data-amount="10000">10,000</button>
+                        <div class="custom-amount">
+                            <div class="input-with-icon">
+                                <i class="input-icon fas fa-edit"></i>
+                                <input type="number" 
+                                       id="amount" 
+                                       class="form-control" 
+                                       placeholder="Enter custom amount"
+                                       min="10"
+                                       max="150000"
+                                       step="1"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                    <small style="color: var(--gray); margin-top: 8px; display: block; font-size: 0.9rem;">
+                        <i class="fas fa-lock"></i> All donations are securely processed
+                    </small>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fas fa-heart"></i>
+                    <span>Donate Now via M-Pesa</span>
+                </button>
+
+                <!-- Status Message -->
+                <div id="status" class="status-message"></div>
+            </form>
+
+            <!-- Security Badges -->
+            <div class="security-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Bank-Level Security</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>Instant Processing</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-receipt"></i>
+                    <span>E-Receipt Provided</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer with Your Contact Info -->
+        <footer class="footer">
+            <p style="font-weight: 600; color: var(--dark); margin-bottom: 15px;">Need Assistance? Contact Us</p>
+            
+            <div class="contact-info">
+                <a href="tel:+254741351755" class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+254 741 351 755</span>
+                </a>
+                <a href="mailto:zonlineman@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>zonlineman@gmail.com</span>
+                </a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://missioncountdown.netlify.app" class="footer-link">Home</a>
+                <a href="https://missioncountdown.netlify.app/about" class="footer-link">Our Mission</a>
+                <a href="https://missioncountdown.netlify.app/impact" class="footer-link">Impact</a>
+                <a href="https://missioncountdown.netlify.app/contact" class="footer-link">Contact</a>
+            </div>
+            
+            <p class="copyright">
+                &copy; 2024 Mission Countdown. Every contribution makes a difference.<br>
+                Registered Non-Profit Organization. All donations are tax-deductible.
+            </p>
+        </footer>
+    </div>
+
+>>>>>>> 5b97db5f12f0c617174e4b8893816c907bf40e73
     <script>
         // [PASTE THE ENTIRE PERFECTED JAVASCRIPT CODE FROM PREVIOUS ANSWER HERE]
         document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
             // [ALL THE VALIDATION CODE GOES HERE]
+=======
+            const form = document.getElementById('donationForm');
+            const phoneInput = document.getElementById('phone');
+            const amountInput = document.getElementById('amount');
+            const submitBtn = document.getElementById('submitBtn');
+            const statusElement = document.getElementById('status');
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            
+            // Progress bar elements
+            const raisedAmountElement = document.getElementById('raisedAmount');
+            const goalAmountElement = document.getElementById('goalAmount');
+            const progressFillElement = document.getElementById('progressFill');
+            const progressPercentElement = document.getElementById('progressPercent');
+            const donorCountElement = document.getElementById('donorCount');
+            
+            // ===== PROGRESS BAR CALCULATION =====
+            // In a real app, fetch these from your database/API
+            // For demo, we'll use realistic numbers and compute percentage dynamically
+            
+            let donationData = {
+                raised: 45200,    // KES raised so far
+                goal: 100000,     // KES goal
+                donors: 128       // Number of donors
+            };
+            
+            // Function to calculate and update progress
+            function updateProgressBar() {
+                // Calculate percentage (capped at 100%)
+                const percentage = Math.min(Math.round((donationData.raised / donationData.goal) * 100), 100);
+                
+                // Update display with animation
+                animateValue(raisedAmountElement, 0, donationData.raised, 1500, true);
+                animateValue(donorCountElement, 0, donationData.donors, 1500, false);
+                animateValue(progressPercentElement, 0, percentage, 1500, false, '%');
+                
+                // Animate progress bar fill
+                progressFillElement.style.width = `${percentage}%`;
+                
+                // Update goal amount display
+                goalAmountElement.textContent = donationData.goal.toLocaleString();
+            }
+            
+            // Number animation function
+            function animateValue(element, start, end, duration, formatNumber = false, suffix = '') {
+                if (start === end) {
+                    if (formatNumber) {
+                        element.textContent = end.toLocaleString();
+                    } else {
+                        element.textContent = end + suffix;
+                    }
+                    return;
+                }
+                
+                const range = end - start;
+                const increment = end > start ? 1 : -1;
+                const stepTime = Math.abs(Math.floor(duration / range));
+                let current = start;
+                
+                const timer = setInterval(function() {
+                    current += increment;
+                    
+                    if (formatNumber) {
+                        element.textContent = current.toLocaleString();
+                    } else {
+                        element.textContent = current + suffix;
+                    }
+                    
+                    if (current === end) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+            }
+            
+            // Initialize progress bar on page load
+            updateProgressBar();
+            
+            // ===== FORM FUNCTIONALITY =====
+            
+            // Format phone number as user types
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.startsWith('254')) {
+                        // Format: 254 XXX XXX XXX
+                        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,3})/, '$1 $2 $3 $4').trim();
+                    } else if (value.startsWith('0')) {
+                        // Format: 0XXX XXX XXX
+                        value = value.replace(/(\d{4})(\d{3})(\d{0,3})/, '$1 $2 $3').trim();
+                    }
+                }
+                e.target.value = value;
+            });
+
+            // Amount button functionality
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    amountButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Set the amount input value
+                    const amount = this.getAttribute('data-amount');
+                    amountInput.value = amount;
+                });
+            });
+
+            // Clear active button when custom amount is typed
+            amountInput.addEventListener('input', function() {
+                amountButtons.forEach(btn => btn.classList.remove('active'));
+            });
+
+            // Form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Get and clean phone number
+                let phone = phoneInput.value.replace(/\s+/g, '').trim();
+                const amount = amountInput.value;
+
+                // Validate phone number
+                if (!phone) {
+                    showStatus('Please enter your phone number', 'error');
+                    phoneInput.focus();
+                    return;
+                }
+
+                // Convert phone to 254 format
+                if (phone.startsWith('0') && phone.length === 10) {
+                    phone = '254' + phone.slice(1);
+                } else if (phone.startsWith('7') && phone.length === 9) {
+                    phone = '254' + phone;
+                } else if (phone.startsWith('254') && phone.length === 12) {
+                    // Already correct
+                } else {
+                    showStatus('Please enter a valid Kenyan phone number (e.g., 0741 351 755)', 'error');
+                    phoneInput.focus();
+                    return;
+                }
+
+                // Validate amount
+                if (!amount || amount < 10) {
+                    showStatus('Minimum donation amount is KES 10', 'error');
+                    amountInput.focus();
+                    return;
+                }
+
+                if (amount > 150000) {
+                    showStatus('Maximum donation amount is KES 150,000', 'error');
+                    amountInput.focus();
+                    return;
+                }
+
+                // Update UI for processing
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                showStatus('Initiating secure payment request to your phone...', 'processing');
+
+                try {
+                    const response = await fetch('/.netlify/functions/stkpush', {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({ 
+                            phone: phone, 
+                            amount: parseFloat(amount) 
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (response.ok) {
+                        // Success - show confirmation
+                        showStatus(
+                            `<i class="fas fa-check-circle"></i> <strong>Payment request sent!</strong><br>
+                            Please check your phone (<strong>${phone}</strong>) and enter your M-PESA PIN to complete the donation.`,
+                            'success'
+                        );
+                        
+                        // Simulate updating progress bar after successful donation
+                        // In real app, wait for M-Pesa callback confirmation
+                        setTimeout(() => {
+                            // Update donation data (in real app, this would come from your backend)
+                            donationData.raised += parseFloat(amount);
+                            donationData.donors += 1;
+                            
+                            // Update progress bar with new values
+                            updateProgressBar();
+                            
+                            // Show thank you message
+                            showStatus(
+                                `<i class="fas fa-heart"></i> <strong>Thank you for your donation of KES ${parseFloat(amount).toLocaleString()}!</strong><br>
+                                Your support is helping us reach our mission goals.`,
+                                'success'
+                            );
+                        }, 3000);
+                        
+                        // Reset form
+                        setTimeout(() => {
+                            form.reset();
+                            amountButtons.forEach(btn => btn.classList.remove('active'));
+                        }, 5000);
+                        
+                    } else {
+                        // API error - show brief message then redirect
+                        let errorMsg = 'Payment request failed. Please see our warning page for details.';
+                        showStatus(`<i class="fas fa-exclamation-triangle"></i> ${errorMsg}`, 'error');
+                        
+             
+             
+                        // Redirect after 3 seconds
+                        setTimeout(() => {
+                            window.location.href = '/warning.html';
+                        }, 1000);
+                    }
+                } catch (error) {
+                    // Network or unexpected error
+                    console.error('Donation error:', error);
+                    
+                    // Show brief error message then redirect
+                    showStatus(
+                        `<i class="fas fa-exclamation-circle"></i> Network error. Please see our warning page for details.`,
+                        'error'
+                    );
+                    
+                    // Redirect after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = 'warning.html';
+                    }, 1000);
+                    
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-heart"></i> Donate Now via M-Pesa';
+                }
+            });
+
+            // Function to show status messages
+            function showStatus(message, type) {
+                statusElement.innerHTML = message;
+                statusElement.className = 'status-message';
+                
+                switch(type) {
+                    case 'success':
+                        statusElement.classList.add('status-success');
+                        break;
+                    case 'error':
+                        statusElement.classList.add('status-error');
+                        break;
+                    case 'processing':
+                        statusElement.classList.add('status-processing');
+                        break;
+                }
+                
+                // Auto-hide success messages after 8 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusElement.style.display = 'none';
+                    }, 8000);
+                }
+            }
+
+            // Auto-hide messages on click
+            statusElement.addEventListener('click', function() {
+                this.style.display = 'none';
+            });
+>>>>>>> 5b97db5f12f0c617174e4b8893816c907bf40e73
         });
     </script>
 </body>
