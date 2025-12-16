@@ -55,7 +55,7 @@ exports.handler = function(event, context, callback) {
 
         // 6. Check if credentials exist
      if (!CONSUMER_KEY || !CONSUMER_SECRET || !BUSINESS_SHORTCODE || !PASSKEY) {
-    console.error('Missing M-Pesa credentials - redirecting to warning page');
+    console.error('Missing M-Pesa credentials');
     return callback(null, {
         statusCode: 302,
         headers: {
