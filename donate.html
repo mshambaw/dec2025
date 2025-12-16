@@ -42,20 +42,7 @@
             justify-content: center;
             line-height: 1.6;
         }
-        
-body {
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
-    /* Various greens - natural & environmental */
-}
 
-:root {
-    --primary: #2e7d32;      /* Forest green */
-    --primary-dark: #1b5e20;
-    --secondary: #4caf50;    /* Bright green */
-    --accent: #ff9800;       /* Orange accent */
-    --light: #e8f5e9;        /* Light green */
-    --dark: #1b5e20;         /* Deep green */
-}
         /* ===== CONTAINER ===== */
         .container {
             width: 100%;
@@ -996,23 +983,33 @@ body {
                             amountButtons.forEach(btn => btn.classList.remove('active'));
                         }, 5000);
                         
-                    } } else {
-    // API error - show brief message then redirect
-    let errorMsg = 'Payment request failed. Please see our warning page for details.';
-    showStatus(`<i class="fas fa-exclamation-triangle"></i> ${errorMsg}`, 'error');
-    
-    // Redirect after 3 seconds
-    setTimeout(() => {
-        window.location.href = '/warning.html';
-    }, 3000);
-}
+                    } else {
+                        // API error - show brief message then redirect
+                        let errorMsg = 'Payment request failed. Please see our warning page for details.';
+                        showStatus(`<i class="fas fa-exclamation-triangle"></i> ${errorMsg}`, 'error');
+                        
+             
+             
+                        // Redirect after 3 seconds
+                        setTimeout(() => {
+                            window.location.href = '/warning.html';
+                        }, 1000);
+                    }
                 } catch (error) {
                     // Network or unexpected error
                     console.error('Donation error:', error);
+                    
+                    // Show brief error message then redirect
                     showStatus(
-                        `<i class="fas fa-exclamation-circle"></i> Network error. Please check your internet connection and try again.`,
+                        `<i class="fas fa-exclamation-circle"></i> Network error. Please see our warning page for details.`,
                         'error'
                     );
+                    
+                    // Redirect after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = 'warning.html';
+                    }, 1000);
+                    
                 } finally {
                     // Reset button state
                     submitBtn.disabled = false;
