@@ -54,16 +54,17 @@ exports.handler = function(event, context, callback) {
         var CALLBACK_URL = process.env.MPESA_CALLBACK_URL || 'https://missioncountdown.netlify.app/.netlify/functions/callback';
 
         // 6. Check if credentials exist
-        if (!CONSUMER_KEY || !CONSUMER_SECRET || !BUSINESS_SHORTCODE || !PASSKEY) {
-            console.error('Missing M-Pesa credentials');
-            return callback(null, {
-                statusCode: 500,
-                body: JSON.stringify({
-                    success: false,
-                    message: 'Server configuration error. Missing API credentials.'
-                })
-            });
-        }
+     if (!CONSUMER_KEY || !CONSUMER_SECRET || !BUSINESS_SHORTCODE || !PASSKEY) {
+    console.error('Missing M-Pesa credentials - redirecting to warning page');
+    return callback(null, {
+        statusCode: 302,
+        headers: {
+            'Location': '/donatewarn.html',
+            'Cache-Control': 'no-cache'
+        },
+        body: ''
+    });
+}
 
         // 7. For now, return a success message (we'll add M-Pesa integration later)
         console.log('STK Push requested:', { phone: formattedPhone, amount: amount });
